@@ -69,13 +69,13 @@ public class ForceField : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Block specific objects from passing through the shield
+      
         if (isActive)
         {
             if (other.CompareTag("Asteroid") || other.CompareTag("AsteroidShooter") || other.CompareTag("BoltEnemy1"))
             {
-                // Destroy or deflect the incoming object
-                Destroy(other.gameObject);  // or apply custom effect like deflection
+             
+                Destroy(other.gameObject); 
                 Debug.Log($"{other.name} blocked by ForceField.");
             }
         }

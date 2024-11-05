@@ -4,16 +4,16 @@ using UnityEngine;
 public class ForceField : MonoBehaviour
 {
     [Header("Force Field Settings")]
-    public float activeDuration = 2f;  // Duration the shield stays active
-    public string shieldToggleButton = "Shield";  // Input button name for toggling shield
-    public Material activeMaterial;  // Material when shield is active
-    public Material inactiveMaterial;  // Material when shield is inactive
-    public Color activeColor = Color.cyan;  // Color when active
-    public Color inactiveColor = Color.gray;  // Color when inactive
+    public float activeDuration = 2f;  
+    public string shieldToggleButton = "Shield";  
+    public Material activeMaterial; 
+    public Material inactiveMaterial;  
+    public Color activeColor = Color.cyan;  
+    public Color inactiveColor = Color.gray;  
 
-    private Collider shieldCollider;  // Reference to the collider of the shield
-    private Renderer shieldRenderer;  // Renderer to control appearance
-    private bool isActive = false;  // Track if the shield is active
+    private Collider shieldCollider;
+    private Renderer shieldRenderer;  
+    private bool isActive = false; 
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class ForceField : MonoBehaviour
         shieldRenderer = GetComponent<Renderer>();
 
         shieldCollider.enabled = false;
-        UpdateAppearance(false);  // Set initial inactive appearance
+        UpdateAppearance(false);  
     }
 
     void Update()

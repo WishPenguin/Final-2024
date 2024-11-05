@@ -11,17 +11,17 @@ public class DestroyByContactShooter: MonoBehaviour
     {
         if (other.CompareTag("Boundary"))
         {
-            return; // Do nothing on boundary collision
+            return; 
         }
 
         if (other.CompareTag("AstroidShooter"))
         {
-            return; // Do nothing on boundary collision
+            return;
         }
 
         if (other.CompareTag("ForceField"))
         {
-            return; // Do nothing on force field collision
+            return;
         }
 
         if (other.CompareTag("Player"))
@@ -29,7 +29,7 @@ public class DestroyByContactShooter: MonoBehaviour
             Instantiate(Playerexplosion, other.transform.position, other.transform.rotation);
         }
 
-        // Destroy the asteroid on collision, but not the enemy bolt
+     
         if (other.CompareTag("BoltEnemy1"))
         {
             return;

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
-    public GameObject bullet; // The projectile to be launched
-    public Transform bulletPos; // Position where the projectile spawns
+    public GameObject bullet; 
+    public Transform bulletPos; 
 
     private float timer;
 
     void Start()
     {
-        // Attempt to find bulletPos if it hasn’t been set in the Inspector
+       
         if (bulletPos == null)
         {
             bulletPos = transform.Find("BulletPos");
@@ -38,14 +38,14 @@ public class EnemyShooting : MonoBehaviour
     {
         if (bulletPos != null)
         {
-            // Instantiate the bullet at the bulletPos
+          
             GameObject bulletInstance = Instantiate(bullet, bulletPos.position, Quaternion.identity);
 
-            // Get the EnemyBoltCollision script from the instantiated bullet
+  
             EnemyBoltCollision enemyBoltScript = bulletInstance.GetComponent<EnemyBoltCollision>();
             if (enemyBoltScript != null)
             {
-                // Set the launching asteroid
+              
                 enemyBoltScript.SetLaunchingAsteroid(gameObject);
             }
             else
